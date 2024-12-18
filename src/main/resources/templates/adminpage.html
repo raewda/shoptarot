@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" th:href="@{styles/css/me.css}">
+</head>
+
+<body>
+<div class="container">
+    <div class="header" id="header">
+<!--        header-->
+        <div class="header-nav">
+            <div class="header-wrapper">
+                <img th:src="@{img/logo.png}" alt="" class="logo">
+                <div class="navigation">
+                    <a href="index">
+                        <div class="nav-item">MAIN</div>
+                    </a>
+                    <a href="catalog">
+                        <div class="nav-item">CATALOG</div>
+                    </a>
+                    <div class="nav-item">TAROT FEATURES</div>
+                    <div class="nav-item">CONDITIONS OF SALE</div>
+                    <div class="nav-item">questions</div>
+                    <a href="basket"><div class="nav-item">buy</div></a>
+                </div>
+                <div class="header-links">
+                    <img th:src="@{img/vk.png}" alt="" class="link-item">
+                    <img th:src="@{img/telegram.png}" alt="" class="link-item">
+                </div>
+            </div>
+        </div>
+<!--        header-->
+
+        <div class="header-content">
+            <div class="main-text">Admin</div>
+            <button type="button" id="bubutton" class="button">
+                THEME
+            </button>
+        </div>
+
+
+        <div class="profile-info">
+            <div class="profile-text_info">
+                Data Statistics
+                <div class="profile-info-text-fio">
+                    Sold Cards
+                </div>
+                <div class="profile-info-text-fio">
+                    Statistics: cards
+                </div>
+
+                <div class="profile-info-text-email">
+                    All Users
+                </div>
+                <div class="profile-info-text-fio">
+                    Statistics: users
+                </div>
+                <th:block th:each="user : ${users}">
+                    <tr>
+                        <td th:text="${user.login}">...</td>
+                        <td th:text="${user.password}">...</td>
+                    </tr>
+                </th:block>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+<!--    footer-->
+    <div class="footer">
+        <div class="footer-group-1">
+            <img th:src="@{img/logo.png}" alt="" class="footer-logo"></img>
+            <div class="footer-nav">
+                <a href="index">
+                    <div class="nav-item">MAIN</div>
+                </a>
+                <a href="catalog">
+                    <div class="nav-item">CATALOG</div>
+                </a>
+                <div class="nav-item">TAROT FEATURES</div>
+                <div class="nav-item">CONDITIONS OF SALE</div>
+                <div class="nav-item">questions</div>
+                <a href="basket"><div class="nav-item">buy</div></a>
+            </div>
+            <div class="footer-soc">
+                <img class="footer-soc-item" alt="" th:src="@{img/telegram.png}"></img>
+                <img class="footer-soc-item" alt="" th:src="@{img/vk.png}"></img>
+            </div>
+        </div>
+        <div class="stick"></div>
+        <div class="footer-group-2">
+            <div class="footer-text copyright"> © 2018 Outpost Games, Inc. All Rights Reserved</div>
+            <div class="footer-text">Privacy Policy | Terms of Services | Code of Conduct </div>
+        </div>
+    </div>
+<!--    footer-->
+
+</div>
+</body>
+
+<!--<script th:src="@{/js/admin.js}"></script>-->
+<script th:src="@{/js/theme.js}"></script>
+
+<style th:inline="text">
+    .header{
+        background: url([[@{/img/bg5.png}]])
+                    no-repeat center;
+        background-size: cover;
+    }
+    .header_dark{
+        background: url([[@{/img/bg3.png}]])
+                    no-repeat center;
+        background-size: cover;
+    }
+</style>
+
+
+
+</html>

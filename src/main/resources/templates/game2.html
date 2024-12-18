@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>game</title>
+  <link th:href="@{styles/css/game2.css}" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+  <div id="wrapper">
+      <canvas id='game' width='600' height='600'>Элемент не поддерживается</canvas>
+  </div>
+  <a id="br" href="game" style="display: none;" class="but4">Exit</a>
+  <button id="restartButton" style="display: none;" class="but">Restart</button>
+
+  <script th:src="@{/js/game2.js}"></script>
+
+</body>
+
+<style th:inline="text">
+  .body{
+      background: url([[@{/img/bg6.png}]])
+                  no-repeat center;
+  background-size: cover;
+  }
+
+</style>
+
+</html>
