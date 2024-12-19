@@ -39,6 +39,14 @@ class MainController(
     fun basket (): String{
         return "basket"
     }
+    @GetMapping("/conditions")
+    fun conditions (): String{
+        return "conditions"
+    }
+    @GetMapping("/features")
+    fun features (): String{
+        return "features"
+    }
     @GetMapping("/adminpage")
     fun adminpage (model: Model): String{
         val users = usersRepo.findAll()

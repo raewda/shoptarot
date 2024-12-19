@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarot Features</title>
+  <link rel="stylesheet" th:href="@{styles/css/conditions.css}">
+</head>
+
+
+<body>
+<div class="container">
+  <div class="header">
+    <div class="header-nav">
+      <div class="header-wrapper">
+        <img th:src="@{img/logo.png}" alt="" class="logo">
+        <div class="navigation">
+          <a href="index">
+            <div class="nav-item">MAIN</div>
+          </a>
+          <a href="catalog">
+            <div class="nav-item">CATALOG</div>
+          </a>
+          <div class="nav-item">TAROT FEATURES</div>
+          <a href="conditions"><div class="nav-item">CONDITIONS OF SALE</div></a>
+          <div class="nav-item">questions</div>
+          <a href="basket"><div class="nav-item">buy</div></a>
+        </div>
+        <div class="header-links">
+          <img th:src="@{img/vk.png}" alt="" class="link-item">
+          <img th:src="@{img/telegram.png}" alt="" class="link-item">
+        </div>
+      </div>
+    </div>
+    <div class="header-content">
+      <div class="main-text">tarot features</div>
+      <div class="conditions">
+        <br>Tarot is not just a set of cards, but a whole system of symbols and archetypes that have been formed over the centuries and imbued with deep philosophical and mystical traditions. The first mentions of Tarot cards date back to the 15th century in Italy, where they were used in games and social entertainment. However, over time, their purpose changed, and Tarot became a powerful tool for self-knowledge, predicting the future and, most valuable, for deep reflection on human nature and life paths.
+        <br>
+        <br>Each card in the Tarot deck is filled with unique meaning and symbolism, embodying a wide range of emotions and experiences. Arcana - both Minor and Major - represent key stages and concepts that help to understand internal and external challenges. For many people, Tarot has become not only a practical tool, but also a source of inspiration, allowing them to look inside themselves and find answers to important questions.
+        <br>
+        <br>The emotional value of Tarot lies in its ability to evoke feelings, make you think and open up new perspectives. Working with cards helps to connect with intuition, deepen understanding of yourself and the world around you. Each layout is not just a set of predictions for the future, but an opportunity to rethink the past and actively shape the present.
+        <br>
+        <br>On our website you will find a variety of collectible Tarot decks, each of which is a work of art, a unique combination of visual aesthetics and deep meanings. We pay special attention to quality and originality, offering cards that can become not only a tool for layouts, but also a valuable element of your interior or a gift for loved ones who appreciate the magic and secrets of the Tarot. Immerse yourself in this magical world and let the Tarot open the doors to new opportunities!
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer-group-1">
+      <img th:src="@{img/logo.png}" alt="" class="footer-logo"></img>
+      <div class="footer-nav">
+        <a href="index">
+          <div class="nav-item">MAIN</div>
+        </a>
+        <a href="catalog">
+          <div class="nav-item">CATALOG</div>
+        </a>
+        <div class="nav-item">TAROT FEATURES</div>
+        <a href="conditions"><div class="nav-item">CONDITIONS OF SALE</div></a>
+        <div class="nav-item">questions</div>
+        <a href="basket"><div class="nav-item">buy</div></a>
+      </div>
+      <div class="footer-soc">
+        <img class="footer-soc-item" alt="" th:src="@{img/telegram.png}"></img>
+        <img class="footer-soc-item" alt="" th:src="@{img/vk.png}"></img>
+      </div>
+    </div>
+    <div class="stick"></div>
+    <div class="footer-group-2">
+      <div class="footer-text copyright"> © 2024 raewda production</div>
+      <div class="footer-text">Privacy Policy | Terms of Services | Code of Conduct </div>
+    </div>
+  </div>
+</div>
+</body>
+
+<style th:inline="text">
+  .header{
+      background: url([[@{/img/bg4.png}]])
+                  no-repeat center;
+      background-size: cover;
+  }
+</style>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conditions of Sale</title>
+  <link rel="stylesheet" th:href="@{styles/css/conditions.css}">
+</head>
+
+
+<body>
+<div class="container">
+  <div class="header">
+    <div class="header-nav">
+      <div class="header-wrapper">
+        <img th:src="@{img/logo.png}" alt="" class="logo">
+        <div class="navigation">
+          <a href="index">
+            <div class="nav-item">MAIN</div>
+          </a>
+          <a href="catalog">
+            <div class="nav-item">CATALOG</div>
+          </a>
+          <a href="features"><div class="nav-item">TAROT FEATURES</div></a>
+          <div class="nav-item">CONDITIONS OF SALE</div>
+          <div class="nav-item">questions</div>
+          <a href="basket"><div class="nav-item">buy</div></a>
+        </div>
+        <div class="header-links">
+          <img th:src="@{img/vk.png}" alt="" class="link-item">
+          <img th:src="@{img/telegram.png}" alt="" class="link-item">
+        </div>
+      </div>
+    </div>
+    <div class="header-content">
+      <div class="main-text">conditions of sale</div>
+      <div class="conditions">
+        Dear customers! We care about your purchase being delivered as conveniently and quickly as possible.
+        <br>Please review the delivery terms that apply when placing an order.
+        <br>1. Date:
+        <br>- Your order will be delivered within 2 days after receiving full payment. Please take this into account when planning your delivery.
+        <br>
+        <br>2. Delivery services:
+        <br>- СДЭК: This service offers fast and reliable solutions for sending your goods.
+        <br>- Почта России: A classic delivery service that ensures availability even for the most remote settlements.
+        <br>
+        <br>3. Documents to receive:
+        <br>- To receive the parcel, you must have the following documents with you:
+        <br>- The consignment note (parcel) number that you will receive after placing your order.
+        <br>- Your passport proving your identity.
+        <br>
+        <br>4. Payment via:
+        <br>- Payment for goods is made through your bank's mobile application. Make sure that you have access to online banking to process and confirm the payment.
+        <br>
+        <br>5. Refund:
+        <br>- Please note that items ordered using our shipping services are non-refundable. Please check the product information carefully before placing your order.
+        <br>
+        <br>We want to make your shopping experience enjoyable and easy, and we hope that our shipping terms meet your needs. If you have any further questions, please do not hesitate to contact our customer service. Thank you for choosing our company!
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="footer-group-1">
+      <img th:src="@{img/logo.png}" alt="" class="footer-logo"></img>
+      <div class="footer-nav">
+        <a href="index">
+          <div class="nav-item">MAIN</div>
+        </a>
+        <a href="catalog">
+          <div class="nav-item">CATALOG</div>
+        </a>
+        <a href="features"><div class="nav-item">TAROT FEATURES</div></a>
+        <a href="conditions"><div class="nav-item">CONDITIONS OF SALE</div></a>
+        <div class="nav-item">questions</div>
+        <a href="basket"><div class="nav-item">buy</div></a>
+      </div>
+      <div class="footer-soc">
+        <img class="footer-soc-item" alt="" th:src="@{img/telegram.png}"></img>
+        <img class="footer-soc-item" alt="" th:src="@{img/vk.png}"></img>
+      </div>
+    </div>
+    <div class="stick"></div>
+    <div class="footer-group-2">
+      <div class="footer-text copyright"> © 2024 raewda production</div>
+      <div class="footer-text">Privacy Policy | Terms of Services | Code of Conduct </div>
+    </div>
+  </div>
+</div>
+</body>
+
+<style th:inline="text">
+  .header{
+      background: url([[@{/img/bg4.png}]])
+                  no-repeat center;
+      background-size: cover;
+  }
+</style>
+</html>
