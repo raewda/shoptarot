@@ -146,6 +146,30 @@
                     </tbody>
                 </table>
 
+
+                <div class="statistics">
+                    Statistics Reviews:
+                    <div th:text="${reviews.size()}"></div>
+                </div>
+                <table style="border-collapse: collapse; width: 100%;">
+                    <thead>
+                    <tr>
+                        <th style="border: 1px solid white;">ID</th>
+                        <th style="border: 1px solid white;">username</th>
+                        <th style="border: 1px solid white;">description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <th:block th:each="reviews : ${reviews}">
+                        <tr>
+                            <td style="border: 1px solid white;" th:text="${reviews.id}">...</td>
+                            <td style="border: 1px solid white;" th:text="${reviews.username}">...</td>
+                            <td style="border: 1px solid white;" th:text="${reviews.description}">...</td>
+                        </tr>
+                    </th:block>
+                    </tbody>
+                </table>
+
             </div>
         </div>
     </div>
