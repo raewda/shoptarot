@@ -44,9 +44,9 @@
             </button>
         </div>
 
-
+<!--STATISTICS-->
         <div class="profile-info">
-            <div class="profile-text_info">
+            <div class="profile-text_info" id="profile-text_info">
                 <div class="statistics">
                     Statistics Sold Cards:
                     <div th:text="${soldcards.size()}"></div>
@@ -69,6 +69,9 @@
                     </th:block>
                     </tbody>
                 </table>
+                <button class="statistics_btn">
+                    ADD
+                </button>
 
 
                 <div class="statistics">
@@ -93,6 +96,9 @@
                     </th:block>
                     </tbody>
                 </table>
+                <button class="statistics_btn">
+                    ADD
+                </button>
 
 
                 <div class="statistics">
@@ -117,6 +123,9 @@
                     </th:block>
                     </tbody>
                 </table>
+                <button class="statistics_btn">
+                    ADD
+                </button>
 
 
                 <div class="statistics">
@@ -145,6 +154,9 @@
                     </th:block>
                     </tbody>
                 </table>
+                <button class="statistics_btn">
+                    ADD
+                </button>
 
 
                 <div class="statistics">
@@ -169,6 +181,9 @@
                     </th:block>
                     </tbody>
                 </table>
+                <button class="statistics_btn">
+                    ADD
+                </button>
 
             </div>
         </div>
@@ -217,10 +232,16 @@
                     no-repeat center;
         background-size: cover;
     }
+    .profile-text_info{
+        color: #FFB548;
+    }
     .header_dark{
         background: url([[@{/img/bg3.png}]])
                     no-repeat center;
         background-size: cover;
+    }
+    .profile-text_info_dark{
+        color: white;
     }
 </style>
 
