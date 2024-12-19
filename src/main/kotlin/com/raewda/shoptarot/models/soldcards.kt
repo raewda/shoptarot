@@ -6,13 +6,12 @@ import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 
 @Entity
-data class Users(
+data class soldcards(
     @Id
     @GeneratedValue(
         strategy = GenerationType.IDENTITY
     )
-    val id: Int? = null,
-    val login: String = "",
-    val password : String = ""
+    val id : Int? = null,
+    val card : Int = 0,
+    val client : Int = 0
 )
-

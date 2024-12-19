@@ -1,7 +1,7 @@
 package com.raewda.shoptarot.repo
 
-import com.raewda.shoptarot.models.Users
+import com.raewda.shoptarot.models.Client
 import org.springframework.data.jpa.repository.JpaRepository
 
-interface UsersRepo: JpaRepository<Users, Long> {
+interface ClientRepo: JpaRepository<Client, Long> {
 }

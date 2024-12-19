@@ -1,5 +1,8 @@
 package com.raewda.shoptarot.controllers
 
+import com.raewda.shoptarot.repo.CardRepo
+import com.raewda.shoptarot.repo.ClientRepo
+import com.raewda.shoptarot.repo.SoldcardsRepo
 import com.raewda.shoptarot.repo.UsersRepo
 import org.springframework.stereotype.Controller
 import org.springframework.ui.Model
@@ -7,7 +10,10 @@ import org.springframework.web.bind.annotation.GetMapping
 
 @Controller
 class MainController(
-    private val usersRepo: UsersRepo
+    private val usersRepo: UsersRepo,
+    private val cardRepo: CardRepo,
+    private val clientRepo: ClientRepo,
+    private val soldcardsRepo: SoldcardsRepo
 ) {
     @GetMapping(value = ["/" , "/index"])
     fun home (): String{
@@ -20,14 +26,6 @@ class MainController(
     @GetMapping("/reviews")
     fun reviews (): String{
         return "reviews"
-    }
-    @GetMapping("/game2")
-    fun game2 (): String{
-        return "game2"
-    }
-    @GetMapping("/game")
-    fun game (): String{
-        return "game"
     }
     @GetMapping("/catalog")
     fun catalog (): String{
@@ -45,6 +43,12 @@ class MainController(
     fun adminpage (model: Model): String{
         val users = usersRepo.findAll()
         model.addAttribute("users", users)
+        val card = cardRepo.findAll()
+        model.addAttribute("card", card)
+        val client = clientRepo.findAll()
+        model.addAttribute("client", client)
+        val soldcards = soldcardsRepo.findAll()
+        model.addAttribute("soldcards", soldcards)
         return "adminpage"
     }
 }

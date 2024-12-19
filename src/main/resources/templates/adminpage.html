@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
-    <link rel="stylesheet" th:href="@{styles/css/me.css}">
+    <link rel="stylesheet" th:href="@{styles/css/adminpage.css}">
 </head>
 
 <body>
 <div class="container">
     <div class="header" id="header">
-<!--        header-->
+        <!--        header-->
         <div class="header-nav">
             <div class="header-wrapper">
                 <img th:src="@{img/logo.png}" alt="" class="logo">
@@ -25,7 +25,9 @@
                     <div class="nav-item">TAROT FEATURES</div>
                     <div class="nav-item">CONDITIONS OF SALE</div>
                     <div class="nav-item">questions</div>
-                    <a href="basket"><div class="nav-item">buy</div></a>
+                    <a href="basket">
+                        <div class="nav-item">buy</div>
+                    </a>
                 </div>
                 <div class="header-links">
                     <img th:src="@{img/vk.png}" alt="" class="link-item">
@@ -33,7 +35,7 @@
                 </div>
             </div>
         </div>
-<!--        header-->
+        <!--        header-->
 
         <div class="header-content">
             <div class="main-text">Admin</div>
@@ -46,34 +48,124 @@
         <div class="profile-info">
             <div class="profile-text_info">
                 Data Statistics
-                <div class="profile-info-text-fio">
+
+                <div class="profile-info-text-email">
                     Sold Cards
                 </div>
-                <div class="profile-info-text-fio">
-                    Statistics: cards
+                <div class="statistics">
+                    Statistics:
+                    <div th:text="${soldcards.size()}"></div>
                 </div>
+                <table style="border-collapse: collapse; width: 100%;">
+                    <thead>
+                    <tr>
+                        <th style="border: 1px solid white;">ID</th>
+                        <th style="border: 1px solid white;">card</th>
+                        <th style="border: 1px solid white;">client</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <th:block th:each="soldcards : ${soldcards}">
+                        <tr>
+                            <td style="border: 1px solid white;"  th:text="${soldcards.id}">...</td>
+                            <td style="border: 1px solid white;"  th:text="${soldcards.card}">...</td>
+                            <td style="border: 1px solid white;"  th:text="${soldcards.client}">...</td>
+                        </tr>
+                    </th:block>
+                    </tbody>
+                </table>
+
+
+                <div class="profile-info-text-fio">
+                    All Cards
+                </div>
+                <div class="statistics">
+                    Statistic:
+                    <div th:text="${card.size()}"></div>
+                </div>
+                <table style="border-collapse: collapse; width: 100%;">
+                    <thead>
+                    <tr>
+                        <th style="border: 1px solid white;">ID</th>
+                        <th style="border: 1px solid white;">Name</th>
+                        <th style="border: 1px solid white;">Price</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <th:block th:each="card : ${card}">
+                        <tr>
+                            <td style="border: 1px solid white;" th:text="${card.id}">...</td>
+                            <td style="border: 1px solid white;" th:text="${card.name}">...</td>
+                            <td style="border: 1px solid white;" th:text="${card.price}">...</td>
+                        </tr>
+                    </th:block>
+                    </tbody>
+                </table>
+
 
                 <div class="profile-info-text-email">
                     All Users
                 </div>
-                <div class="profile-info-text-fio">
-                    Statistics: users
+                <div class="statistics">
+                    Statistics:
+                    <div th:text="${users.size()}"></div>
                 </div>
-                <th:block th:each="user : ${users}">
+                <table style="border-collapse: collapse; width: 100%;">
+                    <thead>
                     <tr>
-                        <td th:text="${user.login}">...</td>
-                        <td th:text="${user.password}">...</td>
+                        <th style="border: 1px solid white;">ID</th>
+                        <th style="border: 1px solid white;">login</th>
+                        <th style="border: 1px solid white;">password</th>
                     </tr>
-                </th:block>
+                    </thead>
+                    <tbody>
+                    <th:block th:each="user : ${users}">
+                        <tr>
+                            <td style="border: 1px solid white;" th:text="${user.id}">...</td>
+                            <td style="border: 1px solid white;" th:text="${user.login}">...</td>
+                            <td style="border: 1px solid white;" th:text="${user.password}">...</td>
+                        </tr>
+                    </th:block>
+                    </tbody>
+                </table>
+
+
+                <div class="profile-info-text-email">
+                    All Clients
+                </div>
+                <div class="statistics">
+                    Statistics:
+                    <div th:text="${client.size()}"></div>
+                </div>
+                <table style="border-collapse: collapse; width: 100%;">
+                    <thead>
+                    <tr>
+                        <th style="border: 1px solid white;">ID</th>
+                        <th style="border: 1px solid white;">username</th>
+                        <th style="border: 1px solid white;">email</th>
+                        <th style="border: 1px solid white;">payments</th>
+                        <th style="border: 1px solid white;">address</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <th:block th:each="client : ${client}">
+                        <tr>
+                            <td style="border: 1px solid white;" th:text="${client.id}">...</td>
+                            <td style="border: 1px solid white;" th:text="${client.username}">...</td>
+                            <td style="border: 1px solid white;" th:text="${client.email}">...</td>
+                            <td style="border: 1px solid white;" th:text="${client.payments}">...</td>
+                            <td style="border: 1px solid white;" th:text="${client.address}">...</td>
+                        </tr>
+                    </th:block>
+                    </tbody>
+                </table>
 
             </div>
         </div>
-
-
     </div>
 
 
-<!--    footer-->
+    <!--    footer-->
     <div class="footer">
         <div class="footer-group-1">
             <img th:src="@{img/logo.png}" alt="" class="footer-logo"></img>
@@ -87,7 +179,9 @@
                 <div class="nav-item">TAROT FEATURES</div>
                 <div class="nav-item">CONDITIONS OF SALE</div>
                 <div class="nav-item">questions</div>
-                <a href="basket"><div class="nav-item">buy</div></a>
+                <a href="basket">
+                    <div class="nav-item">buy</div>
+                </a>
             </div>
             <div class="footer-soc">
                 <img class="footer-soc-item" alt="" th:src="@{img/telegram.png}"></img>
@@ -97,11 +191,10 @@
         <div class="stick"></div>
         <div class="footer-group-2">
             <div class="footer-text copyright"> © 2018 Outpost Games, Inc. All Rights Reserved</div>
-            <div class="footer-text">Privacy Policy | Terms of Services | Code of Conduct </div>
+            <div class="footer-text">Privacy Policy | Terms of Services | Code of Conduct</div>
         </div>
     </div>
-<!--    footer-->
-
+    <!--    footer-->
 </div>
 </body>
 
@@ -120,7 +213,6 @@
         background-size: cover;
     }
 </style>
-
 
 
 </html>
