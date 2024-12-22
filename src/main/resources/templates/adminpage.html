@@ -85,8 +85,9 @@
                       data: {
                         labels: stpurchase.map(i => i.month),
                         datasets: [{
-                          label: 'users registration',
+                          label: 'soldcards',
                           data: stpurchase.map(i => i.pcount),
+                           backgroundColor: 'rgba(255, 181, 72, 1)',
                           borderWidth: 1
                         }]
                       },
@@ -173,7 +174,8 @@
                         datasets: [{
                           label: 'users registration',
                           data: stusers.map(i => i.userscount),
-                          borderWidth: 1
+                          borderWidth: 1,
+                          backgroundColor: 'rgba(255, 181, 72, 1)'
                         }]
                       },
                       options: {
