@@ -22,6 +22,10 @@ button:hover {
     cursor: pointer;
 }
 
+table{
+ overflow-x: scroll;
+}
+
 .button{
     background-color: transparent;
     border: none;
@@ -83,6 +87,7 @@ font-size: 90%;
 .nav-item {
     font-size: 90%;
     color: white;
+    text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
@@ -181,7 +186,7 @@ font-size: 90%;
 
 .footer-nav {
     display: flex;
-    width: 50%;
+    width: 75%;
     justify-content: space-between;
     gap: 2%;
 }
@@ -189,6 +194,7 @@ font-size: 90%;
 .footer-nav-item {
     font-size: 80%;
     color: white;
+    text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
     text-transform: uppercase;
@@ -298,6 +304,7 @@ font-size: 90%;
     justify-content: center;
 }
 
+
 .statistics_btn{
     color: white;
     background-color: transparent;
@@ -311,6 +318,24 @@ td{
 }
 
 
+@media(max-width: 980px)
+{
+    .profile-text_info{
+        font-size: 100%;
+    }
+    .profile-text_info_dark{
+        font-size: 100%;
+    }
+    .header-nav{
+        display: none;
+    }
+    .footer-nav{
+        display: none;
+    }
+    .footer-group-1{
+            display: none;
+        }
+}
 
 
 
