@@ -4,7 +4,7 @@ let json;
 const get_data = async () => {
     let response = await fetch("catalog.json");
 
-    if (response.ok) { 
+    if (response.ok) {
       json = await response.json();
       catalog_json(json);
     }

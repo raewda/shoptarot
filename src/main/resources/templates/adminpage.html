@@ -69,6 +69,38 @@
                     </th:block>
                     </tbody>
                 </table>
+
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+                <script th:inline="javascript">
+                    let stpurchase = [[${pcount}]];
+                    const ctx = document.getElementById('myChart');
+
+                    new Chart(ctx, {
+                      type: 'bar',
+                      data: {
+                        labels: stpurchase.map(i => i.month),
+                        datasets: [{
+                          label: 'users registration',
+                          data: stpurchase.map(i => i.pcount),
+                          borderWidth: 1
+                        }]
+                      },
+                      options: {
+                        scales: {
+                          y: {
+                            beginAtZero: true,
+                            ticks: {stepSize: 1}
+                          }
+                        }
+                      }
+                    });
+                </script>
+
                 <button class="statistics_btn">
                     ADD
                 </button>
@@ -111,6 +143,7 @@
                         <th style="border: 1px solid white;">ID</th>
                         <th style="border: 1px solid white;">login</th>
                         <th style="border: 1px solid white;">password</th>
+                        <th style="border: 1px solid white;">registration</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -119,10 +152,41 @@
                             <td style="border: 1px solid white;" th:text="${user.id}">...</td>
                             <td style="border: 1px solid white;" th:text="${user.login}">...</td>
                             <td style="border: 1px solid white;" th:text="${user.password}">...</td>
+                            <td style="border: 1px solid white;" th:text="${user.registration}">...</td>
                         </tr>
                     </th:block>
                     </tbody>
                 </table>
+
+                <div>
+                    <canvas id="myChart2"></canvas>
+                </div>
+
+                <script th:inline="javascript">
+                    let stusers = [[${userscount}]];
+                    const ctz = document.getElementById('myChart2');
+
+                    new Chart(ctz, {
+                      type: 'bar',
+                      data: {
+                        labels: stusers.map(i => i.month),
+                        datasets: [{
+                          label: 'users registration',
+                          data: stusers.map(i => i.userscount),
+                          borderWidth: 1
+                        }]
+                      },
+                      options: {
+                        scales: {
+                          y: {
+                            beginAtZero: true,
+                            ticks: {stepSize: 1}
+                          }
+                        }
+                      }
+                    });
+                </script>
+
                 <button class="statistics_btn">
                     ADD
                 </button>

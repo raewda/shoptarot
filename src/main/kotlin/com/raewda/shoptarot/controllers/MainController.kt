@@ -26,7 +26,9 @@ class MainController(
         return "reviews"
     }
     @GetMapping("/catalog")
-    fun catalog (): String{
+    fun catalog (model: Model): String{
+        val card = cardRepo.findAll()
+        model.addAttribute("card", card)
         return "catalog"
     }
     @GetMapping("/cart")
@@ -47,12 +49,16 @@ class MainController(
     }
     @GetMapping("/adminpage")
     fun adminpage (model: Model): String{
+        val userscount = usersRepo.usersregistrationst()
+        model.addAttribute("userscount", userscount)
         val users = usersRepo.findAll()
         model.addAttribute("users", users)
         val card = cardRepo.findAll()
         model.addAttribute("card", card)
         val client = clientRepo.findAll()
         model.addAttribute("client", client)
+        val pcount = soldcardsRepo.purchasest()
+        model.addAttribute("pcount", pcount)
         val soldcards = soldcardsRepo.findAll()
         model.addAttribute("soldcards", soldcards)
         val reviews = reviewsRepo.findAll()
